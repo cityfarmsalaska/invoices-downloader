@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Redirecting…</title>
+  <script>
+    // Forward Intuit OAuth query params to the local app
+    (function(){
+      var qs = window.location.search || '';
+      var target = 'http://127.0.0.1:8000/callback' + qs;
+      window.location.replace(target);
+    })();
+  </script>
+  <style>body{font:16px/1.4 system-ui,Segoe UI,Roboto,Arial,sans-serif;padding:24px}</style>
+</head>
+<body>
+  <p>Completing sign-in… If you are not redirected automatically, click
+    <a id="link" href="#">continue</a>.</p>
+  <script>document.getElementById('link').href = 'http://127.0.0.1:8000/callback' + (window.location.search||'');</script>
+</body>
+</html>
+
+
